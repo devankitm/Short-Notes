@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SQL short notes with examples and copy-ready code.">
+  <title>SQL | Short Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header class="header">
+    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <div class="header-actions">
+      <label class="search">
+        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+      </label>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">Subjects</div>
+      <nav>
+        <a href="sql.html">🗄️ SQL</a>
+        <a href="mongodb.html">🍃 MongoDB</a>
+        <a href="dsa.html">🧩 DSA</a>
+        <a href="javascript.html">⚡ JavaScript</a>
+        <a href="java.html">☕ Java</a>
+        <a href="react.html">⚛️ React</a>
+        <a href="nodejs.html">🟢 Node.js</a>
+      </nav>
+      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+    </aside>
+
+    <main class="main note-main">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>SQL</span></div>
+      <section class="page-heading">
+        <span class="eyebrow">DATABASE</span>
+        <h1>SQL Short Notes</h1>
+        <p>Quick revision notes for relational databases, MySQL commands and everyday SQL queries.</p>
+      </section>
+      <div class="note-layout">
+        <article class="notes">
+<section class="topic searchable" id="introduction">
+  <h2>1. What is SQL?</h2>
+  <p>SQL (Structured Query Language) is used to create, read, update and delete data in relational databases such as MySQL.</p><div class="info-box"><strong>Remember:</strong> SQL works with structured data stored in tables.</div>
+</section>
+<section class="topic searchable" id="create">
+  <h2>2. Create Database</h2>
+  <p>Use <code>CREATE DATABASE</code> to create a new database and <code>USE</code> to select it.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">CREATE DATABASE college;
+USE college;</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="table">
+  <h2>3. Create Table</h2>
+  <p>A table stores data in rows and columns. Define a primary key when a column uniquely identifies each row.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT
+);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="select">
+  <h2>4. SELECT</h2>
+  <p><code>SELECT</code> retrieves data from a table. Use <code>WHERE</code> when you need filtering.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">SELECT name, age
+FROM students
+WHERE age >= 18;</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="insert">
+  <h2>5. INSERT</h2>
+  <p><code>INSERT INTO</code> adds new rows.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">INSERT INTO students (id, name, age)
+VALUES (1, 'Ankit', 21);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="update">
+  <h2>6. UPDATE</h2>
+  <p>Use <code>UPDATE</code> to change existing rows. Always use a suitable <code>WHERE</code> condition.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">UPDATE students
+SET age = 22
+WHERE id = 1;</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="delete">
+  <h2>7. DELETE</h2>
+  <p><code>DELETE</code> removes rows. Without <code>WHERE</code>, all rows may be removed.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">DELETE FROM students
+WHERE id = 1;</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="join">
+  <h2>8. JOIN</h2>
+  <p>JOIN combines related rows from multiple tables.</p><div class="code-card">
+  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-sql">SELECT students.name, courses.course_name
+FROM students
+INNER JOIN courses
+ON students.id = courses.student_id;</code></pre>
+</div>
+</section>
+
+        </article>
+        <aside class="toc" id="toc">
+          <div class="toc-title">On this page</div>
+          <div id="tocLinks"></div>
+        </aside>
+      </div>
+      <div class="page-nav">
+        <a class="secondary-btn" href="index.html">← Previous</a>
+        <a class="primary-btn" href="mongodb.html">Next →</a>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

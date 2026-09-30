@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MongoDB short notes with examples and copy-ready code.">
+  <title>MongoDB | Short Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header class="header">
+    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <div class="header-actions">
+      <label class="search">
+        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+      </label>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">Subjects</div>
+      <nav>
+        <a href="sql.html">🗄️ SQL</a>
+        <a href="mongodb.html">🍃 MongoDB</a>
+        <a href="dsa.html">🧩 DSA</a>
+        <a href="javascript.html">⚡ JavaScript</a>
+        <a href="java.html">☕ Java</a>
+        <a href="react.html">⚛️ React</a>
+        <a href="nodejs.html">🟢 Node.js</a>
+      </nav>
+      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+    </aside>
+
+    <main class="main note-main">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>MongoDB</span></div>
+      <section class="page-heading">
+        <span class="eyebrow">DATABASE • NOSQL</span>
+        <h1>MongoDB Short Notes</h1>
+        <p>Short MongoDB notes covering documents, collections, CRUD operations and common queries.</p>
+      </section>
+      <div class="note-layout">
+        <article class="notes">
+<section class="topic searchable" id="intro">
+  <h2>1. What is MongoDB?</h2>
+  <p>MongoDB is a NoSQL document database. Data is stored as flexible JSON-like documents inside collections.</p>
+</section>
+<section class="topic searchable" id="database">
+  <h2>2. Select a Database</h2>
+  <p><code>use</code> switches to a database. MongoDB creates it when data is first stored.</p><div class="code-card">
+  <div class="code-header"><span>MongoDB Shell</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">use college</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="insert">
+  <h2>3. Insert Document</h2>
+  <p>Use <code>insertOne()</code> to add a single document.</p><div class="code-card">
+  <div class="code-header"><span>MongoDB Shell</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">db.students.insertOne({
+  name: "Ankit",
+  age: 21,
+  course: "CSE"
+});</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="find">
+  <h2>4. Find Documents</h2>
+  <p><code>find()</code> reads documents. Add a filter object to match specific records.</p><div class="code-card">
+  <div class="code-header"><span>MongoDB Shell</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">db.students.find({ age: { $gte: 18 } });</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="update">
+  <h2>5. Update Document</h2>
+  <p><code>updateOne()</code> changes a matching document.</p><div class="code-card">
+  <div class="code-header"><span>MongoDB Shell</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">db.students.updateOne(
+  { name: "Ankit" },
+  { $set: { age: 22 } }
+);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="delete">
+  <h2>6. Delete Document</h2>
+  <p><code>deleteOne()</code> removes the first matching document.</p><div class="code-card">
+  <div class="code-header"><span>MongoDB Shell</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">db.students.deleteOne({
+  name: "Ankit"
+});</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="aggregation">
+  <h2>7. Aggregation</h2>
+  <p>Aggregation processes documents through stages such as <code>$match</code>, <code>$group</code> and <code>$sort</code>.</p><div class="code-card">
+  <div class="code-header"><span>MongoDB Shell</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">db.students.aggregate([
+  { $match: { age: { $gte: 18 } } },
+  { $group: { _id: "$course", total: { $sum: 1 } } }
+]);</code></pre>
+</div>
+</section>
+
+        </article>
+        <aside class="toc" id="toc">
+          <div class="toc-title">On this page</div>
+          <div id="tocLinks"></div>
+        </aside>
+      </div>
+      <div class="page-nav">
+        <a class="secondary-btn" href="sql.html">← Previous</a>
+        <a class="primary-btn" href="dsa.html">Next →</a>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

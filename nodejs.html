@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Node.js short notes with examples and copy-ready code.">
+  <title>Node.js | Short Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header class="header">
+    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <div class="header-actions">
+      <label class="search">
+        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+      </label>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">Subjects</div>
+      <nav>
+        <a href="sql.html">🗄️ SQL</a>
+        <a href="mongodb.html">🍃 MongoDB</a>
+        <a href="dsa.html">🧩 DSA</a>
+        <a href="javascript.html">⚡ JavaScript</a>
+        <a href="java.html">☕ Java</a>
+        <a href="react.html">⚛️ React</a>
+        <a href="nodejs.html">🟢 Node.js</a>
+      </nav>
+      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+    </aside>
+
+    <main class="main note-main">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>Node.js</span></div>
+      <section class="page-heading">
+        <span class="eyebrow">BACKEND</span>
+        <h1>Node.js Short Notes</h1>
+        <p>Node.js fundamentals for server-side JavaScript, modules, HTTP and Express APIs.</p>
+      </section>
+      <div class="note-layout">
+        <article class="notes">
+<section class="topic searchable" id="intro">
+  <h2>1. What is Node.js?</h2>
+  <p>Node.js is a JavaScript runtime built on the V8 engine. It allows JavaScript to run outside the browser.</p>
+</section>
+<section class="topic searchable" id="module">
+  <h2>2. Module</h2>
+  <p>Modules help split backend code into reusable files.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const path = require("path");
+
+console.log(path.join("src", "app.js"));</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="server">
+  <h2>3. HTTP Server</h2>
+  <p>The built-in HTTP module can create a basic web server.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.end("Hello Server");
+});
+
+server.listen(3000);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="express">
+  <h2>4. Express Route</h2>
+  <p>Express makes routing and API development simpler.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const express = require("express");
+
+const app = express();
+
+app.get("/api/users", (req, res) => {
+  res.json({ message: "Users API" });
+});
+
+app.listen(3000);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="middleware">
+  <h2>5. Middleware</h2>
+  <p>Middleware runs between the request and the final route handler.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">app.use((req, res, next) => {
+  console.log(req.method, req.url);
+  next();
+});</code></pre>
+</div>
+</section>
+
+        </article>
+        <aside class="toc" id="toc">
+          <div class="toc-title">On this page</div>
+          <div id="tocLinks"></div>
+        </aside>
+      </div>
+      <div class="page-nav">
+        <a class="secondary-btn" href="react.html">← Previous</a>
+        <a class="primary-btn" href="index.html">Next →</a>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

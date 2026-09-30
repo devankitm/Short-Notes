@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Java short notes with examples and copy-ready code.">
+  <title>Java | Short Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header class="header">
+    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <div class="header-actions">
+      <label class="search">
+        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+      </label>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">Subjects</div>
+      <nav>
+        <a href="sql.html">🗄️ SQL</a>
+        <a href="mongodb.html">🍃 MongoDB</a>
+        <a href="dsa.html">🧩 DSA</a>
+        <a href="javascript.html">⚡ JavaScript</a>
+        <a href="java.html">☕ Java</a>
+        <a href="react.html">⚛️ React</a>
+        <a href="nodejs.html">🟢 Node.js</a>
+      </nav>
+      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+    </aside>
+
+    <main class="main note-main">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>Java</span></div>
+      <section class="page-heading">
+        <span class="eyebrow">PROGRAMMING • OOP</span>
+        <h1>Java Short Notes</h1>
+        <p>Core Java revision notes with classes, objects, inheritance, exceptions and collections.</p>
+      </section>
+      <div class="note-layout">
+        <article class="notes">
+<section class="topic searchable" id="intro">
+  <h2>1. Java Basics</h2>
+  <p>Java is a class-based, object-oriented language designed to run on the JVM.</p><div class="code-card">
+  <div class="code-header"><span>Java</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-java">public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello Java");
+  }
+}</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="class">
+  <h2>2. Class and Object</h2>
+  <p>A class is a blueprint. An object is an instance of a class.</p><div class="code-card">
+  <div class="code-header"><span>Java</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-java">class Student {
+  String name;
+
+  Student(String name) {
+    this.name = name;
+  }
+}
+
+Student s = new Student("Ankit");</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="inheritance">
+  <h2>3. Inheritance</h2>
+  <p>Inheritance allows a child class to reuse members of a parent class.</p><div class="code-card">
+  <div class="code-header"><span>Java</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-java">class Animal {
+  void sound() {
+    System.out.println("Sound");
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    System.out.println("Bark");
+  }
+}</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="exception">
+  <h2>4. Exception Handling</h2>
+  <p>Use <code>try-catch</code> to handle exceptions without abruptly stopping normal program flow.</p><div class="code-card">
+  <div class="code-header"><span>Java</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-java">try {
+  int result = 10 / 0;
+} catch (ArithmeticException e) {
+  System.out.println("Cannot divide by zero");
+}</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="arraylist">
+  <h2>5. ArrayList</h2>
+  <p><code>ArrayList</code> is a resizable list from the Java Collections Framework.</p><div class="code-card">
+  <div class="code-header"><span>Java</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-java">import java.util.ArrayList;
+
+ArrayList<String> names = new ArrayList<>();
+names.add("Ankit");
+names.add("Rahul");
+
+System.out.println(names);</code></pre>
+</div>
+</section>
+
+        </article>
+        <aside class="toc" id="toc">
+          <div class="toc-title">On this page</div>
+          <div id="tocLinks"></div>
+        </aside>
+      </div>
+      <div class="page-nav">
+        <a class="secondary-btn" href="javascript.html">← Previous</a>
+        <a class="primary-btn" href="react.html">Next →</a>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

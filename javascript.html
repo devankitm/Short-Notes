@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JavaScript short notes with examples and copy-ready code.">
+  <title>JavaScript | Short Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header class="header">
+    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <div class="header-actions">
+      <label class="search">
+        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+      </label>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">Subjects</div>
+      <nav>
+        <a href="sql.html">🗄️ SQL</a>
+        <a href="mongodb.html">🍃 MongoDB</a>
+        <a href="dsa.html">🧩 DSA</a>
+        <a href="javascript.html">⚡ JavaScript</a>
+        <a href="java.html">☕ Java</a>
+        <a href="react.html">⚛️ React</a>
+        <a href="nodejs.html">🟢 Node.js</a>
+      </nav>
+      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+    </aside>
+
+    <main class="main note-main">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>JavaScript</span></div>
+      <section class="page-heading">
+        <span class="eyebrow">PROGRAMMING</span>
+        <h1>JavaScript Short Notes</h1>
+        <p>Practical JavaScript notes from fundamentals to modern asynchronous programming.</p>
+      </section>
+      <div class="note-layout">
+        <article class="notes">
+<section class="topic searchable" id="variables">
+  <h2>1. Variables</h2>
+  <p>Use <code>const</code> for values that will not be reassigned and <code>let</code> for values that can change.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const name = "Ankit";
+let age = 21;
+
+age = 22;
+console.log(name, age);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="function">
+  <h2>2. Functions</h2>
+  <p>Functions group reusable logic.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">function add(a, b) {
+  return a + b;
+}
+
+console.log(add(10, 20));</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="array">
+  <h2>3. Array Methods</h2>
+  <p>Methods such as <code>map</code>, <code>filter</code> and <code>reduce</code> are useful for transforming data.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const nums = [1, 2, 3, 4];
+
+const squares = nums.map(n => n * n);
+const even = nums.filter(n => n % 2 === 0);</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="dom">
+  <h2>4. DOM</h2>
+  <p>The DOM lets JavaScript read and update HTML elements.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const heading = document.querySelector("h1");
+
+heading.textContent = "Hello JavaScript";</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="async">
+  <h2>5. Async / Await</h2>
+  <p><code>async</code> functions can use <code>await</code> to work with promises in a readable way.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">async function getUsers() {
+  const response = await fetch("/api/users");
+  const users = await response.json();
+  console.log(users);
+}
+
+getUsers();</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="event">
+  <h2>6. Event Listener</h2>
+  <p>Use <code>addEventListener</code> to respond to user actions.</p><div class="code-card">
+  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-javascript">const button = document.querySelector("#save");
+
+button.addEventListener("click", () => {
+  console.log("Saved");
+});</code></pre>
+</div>
+</section>
+
+        </article>
+        <aside class="toc" id="toc">
+          <div class="toc-title">On this page</div>
+          <div id="tocLinks"></div>
+        </aside>
+      </div>
+      <div class="page-nav">
+        <a class="secondary-btn" href="dsa.html">← Previous</a>
+        <a class="primary-btn" href="java.html">Next →</a>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

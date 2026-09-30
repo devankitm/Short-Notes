@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="React short notes with examples and copy-ready code.">
+  <title>React | Short Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header class="header">
+    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <div class="header-actions">
+      <label class="search">
+        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+      </label>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title">Subjects</div>
+      <nav>
+        <a href="sql.html">🗄️ SQL</a>
+        <a href="mongodb.html">🍃 MongoDB</a>
+        <a href="dsa.html">🧩 DSA</a>
+        <a href="javascript.html">⚡ JavaScript</a>
+        <a href="java.html">☕ Java</a>
+        <a href="react.html">⚛️ React</a>
+        <a href="nodejs.html">🟢 Node.js</a>
+      </nav>
+      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+    </aside>
+
+    <main class="main note-main">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>React</span></div>
+      <section class="page-heading">
+        <span class="eyebrow">FRONTEND</span>
+        <h1>React Short Notes</h1>
+        <p>React notes for components, JSX, props, state and common hooks.</p>
+      </section>
+      <div class="note-layout">
+        <article class="notes">
+<section class="topic searchable" id="intro">
+  <h2>1. What is React?</h2>
+  <p>React is a JavaScript library for building user interfaces with reusable components.</p>
+</section>
+<section class="topic searchable" id="component">
+  <h2>2. Component</h2>
+  <p>A component is a reusable UI unit. Function components are the common modern approach.</p><div class="code-card">
+  <div class="code-header"><span>JSX</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-jsx">function Welcome() {
+  return <h1>Hello React</h1>;
+}
+
+export default Welcome;</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="props">
+  <h2>3. Props</h2>
+  <p>Props pass data from a parent component to a child component.</p><div class="code-card">
+  <div class="code-header"><span>JSX</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-jsx">function User({ name }) {
+  return <p>Hello {name}</p>;
+}
+
+<User name="Ankit" /></code></pre>
+</div>
+</section>
+<section class="topic searchable" id="state">
+  <h2>4. useState</h2>
+  <p><code>useState</code> stores local component state.</p><div class="code-card">
+  <div class="code-header"><span>JSX</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-jsx">import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {count}
+    </button>
+  );
+}</code></pre>
+</div>
+</section>
+<section class="topic searchable" id="effect">
+  <h2>5. useEffect</h2>
+  <p><code>useEffect</code> runs side effects such as data fetching or subscriptions.</p><div class="code-card">
+  <div class="code-header"><span>JSX</span><button class="copy-btn" type="button">Copy</button></div>
+  <pre><code class="language-jsx">import { useEffect } from "react";
+
+useEffect(() => {
+  console.log("Component mounted");
+}, []);</code></pre>
+</div>
+</section>
+
+        </article>
+        <aside class="toc" id="toc">
+          <div class="toc-title">On this page</div>
+          <div id="tocLinks"></div>
+        </aside>
+      </div>
+      <div class="page-nav">
+        <a class="secondary-btn" href="java.html">← Previous</a>
+        <a class="primary-btn" href="nodejs.html">Next →</a>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
