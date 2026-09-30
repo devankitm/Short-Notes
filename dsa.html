@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
 </head>
+
 <body>
   <div class="progress-bar" id="progressBar"></div>
   <header class="header">
     <a class="logo" href="index.html"><span><i class="fa-regular fa-note-sticky"></i></span>Coding-Notes</a>
     <div class="header-actions">
       <label class="search">
-        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="globalSearch" type="search" placeholder="Search subjects..." autocomplete="off">
       </label>
       <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
       <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
@@ -63,7 +66,9 @@
 
 
       </nav>
-      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+      <div class="sidebar-tip"><strong>Reading tip</strong>
+        <p>Use the sidebar to jump between topics.</p>
+      </div>
     </aside>
 
     <main class="main note-main">
@@ -75,50 +80,56 @@
       </section>
       <div class="note-layout">
         <article class="notes">
-<section class="topic searchable" id="intro">
-  <h2>1. What is DSA?</h2>
-  <p>Data Structures organize data, while Algorithms define steps to solve a problem efficiently.</p><div class="info-box"><strong>Goal:</strong> solve correctly while keeping time and space usage reasonable.</div>
-</section>
-<section class="topic searchable" id="complexity">
-  <h2>2. Time Complexity</h2>
-  <p>Big-O describes how running time grows as input size increases.</p><div class="code-card">
-  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-javascript">// O(1)
+          <section class="topic searchable" id="intro">
+            <h2>1. What is DSA?</h2>
+            <p>Data Structures organize data, while Algorithms define steps to solve a problem efficiently.</p>
+            <div class="info-box"><strong>Goal:</strong> solve correctly while keeping time and space usage reasonable.
+            </div>
+          </section>
+          <section class="topic searchable" id="complexity">
+            <h2>2. Time Complexity</h2>
+            <p>Big-O describes how running time grows as input size increases.</p>
+            <div class="code-card">
+              <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+              <pre><code class="language-javascript">// O(1)
 const first = arr[0];
 
 // O(n)
 for (const item of arr) {
   console.log(item);
 }</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="array">
-  <h2>3. Array</h2>
-  <p>An array stores values in an ordered collection and provides index-based access.</p><div class="code-card">
-  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-javascript">const numbers = [10, 20, 30];
+            </div>
+          </section>
+          <section class="topic searchable" id="array">
+            <h2>3. Array</h2>
+            <p>An array stores values in an ordered collection and provides index-based access.</p>
+            <div class="code-card">
+              <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+              <pre><code class="language-javascript">const numbers = [10, 20, 30];
 
 console.log(numbers[0]); // 10
 numbers.push(40);</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="linear">
-  <h2>4. Linear Search</h2>
-  <p>Linear search checks elements one by one. Its worst-case time complexity is O(n).</p><div class="code-card">
-  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-javascript">function linearSearch(arr, target) {
+            </div>
+          </section>
+          <section class="topic searchable" id="linear">
+            <h2>4. Linear Search</h2>
+            <p>Linear search checks elements one by one. Its worst-case time complexity is O(n).</p>
+            <div class="code-card">
+              <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+              <pre><code class="language-javascript">function linearSearch(arr, target) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) return i;
   }
   return -1;
 }</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="binary">
-  <h2>5. Binary Search</h2>
-  <p>Binary search repeatedly halves a <strong>sorted</strong> array. Time complexity is O(log n).</p><div class="code-card">
-  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-javascript">function binarySearch(arr, target) {
+            </div>
+          </section>
+          <section class="topic searchable" id="binary">
+            <h2>5. Binary Search</h2>
+            <p>Binary search repeatedly halves a <strong>sorted</strong> array. Time complexity is O(log n).</p>
+            <div class="code-card">
+              <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+              <pre><code class="language-javascript">function binarySearch(arr, target) {
   let left = 0;
   let right = arr.length - 1;
 
@@ -132,32 +143,34 @@ numbers.push(40);</code></pre>
 
   return -1;
 }</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="stack">
-  <h2>6. Stack</h2>
-  <p>Stack follows LIFO: Last In, First Out. Common operations are push and pop.</p><div class="code-card">
-  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-javascript">const stack = [];
+            </div>
+          </section>
+          <section class="topic searchable" id="stack">
+            <h2>6. Stack</h2>
+            <p>Stack follows LIFO: Last In, First Out. Common operations are push and pop.</p>
+            <div class="code-card">
+              <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+              <pre><code class="language-javascript">const stack = [];
 
 stack.push(10);
 stack.push(20);
 
 console.log(stack.pop()); // 20</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="queue">
-  <h2>7. Queue</h2>
-  <p>Queue follows FIFO: First In, First Out.</p><div class="code-card">
-  <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-javascript">const queue = [];
+            </div>
+          </section>
+          <section class="topic searchable" id="queue">
+            <h2>7. Queue</h2>
+            <p>Queue follows FIFO: First In, First Out.</p>
+            <div class="code-card">
+              <div class="code-header"><span>JavaScript</span><button class="copy-btn" type="button">Copy</button></div>
+              <pre><code class="language-javascript">const queue = [];
 
 queue.push("A");
 queue.push("B");
 
 console.log(queue.shift()); // A</code></pre>
-</div>
-</section>
+            </div>
+          </section>
 
         </article>
         <aside class="toc" id="toc">
@@ -176,4 +189,5 @@ console.log(queue.shift()); // A</code></pre>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
