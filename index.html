@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Short Notes - quick programming and computer science notes with colorful code examples.">
-  <title>Short Notes | Home</title>
+  <meta name="description"
+    content="Short Notes - quick programming and computer science notes with colorful code examples.">
+  <title>Code-Notes | Home</title>
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="progress-bar" id="progressBar"></div>
 
   <header class="header">
-    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <a class="logo" href="index.html"><span><i class="fa-regular fa-note-sticky"></i></span>Coding-Notes</a>
     <div class="header-actions">
       <label class="search">
-        <span>⌕</span>
+        <i class="fa-solid fa-magnifying-glass"></i>
         <input id="globalSearch" type="search" placeholder="Search subjects..." autocomplete="off">
       </label>
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme"></button>
       <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
       <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
     </div>
@@ -27,13 +32,40 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-title">Subjects</div>
       <nav>
-        <a href="sql.html">🗄️ SQL</a>
-        <a href="mongodb.html">🍃 MongoDB</a>
-        <a href="dsa.html">🧩 DSA</a>
-        <a href="javascript.html">⚡ JavaScript</a>
-        <a href="java.html">☕ Java</a>
-        <a href="react.html">⚛️ React</a>
-        <a href="nodejs.html">🟢 Node.js</a>
+        <div class="item">
+          <i class="devicon-azuresqldatabase-plain colored"></i>
+          <a href="sql.html"> <span>SQL</span></a>
+        </div>
+        <div class="item">
+          <i class="devicon-mongodb-plain colored"></i>
+          <a href="mongodb.html">MongoDB</a>
+        </div>
+        <div class="item">
+          <i class="fa-solid fa-cubes-stacked"></i>
+          <a href="dsa.html"> DSA</a>
+        </div>
+        <div class="item">
+          <i class="devicon-javascript-plain colored"></i>
+          <a href="javascript.html">JavaScript</a>
+        </div>
+        <div class="item">
+          <i class="devicon-java-plain colored"></i>
+          <a href="java.html">Java</a>
+        </div>
+        <div class="item">
+          <i class="devicon-react-original colored"></i>
+          <a href="react.html"></i> React</a>
+        </div>
+        <div class="item">
+          <i class="devicon-nodejs-plain colored"></i>
+          <a href="nodejs.html"> Node.js</a>
+        </div>
+
+
+
+
+
+
       </nav>
       <div class="sidebar-tip">
         <strong>Quick tip</strong>
@@ -63,38 +95,45 @@
 
         <div class="subject-grid" id="subjectGrid">
           <a class="subject-card searchable" data-name="sql database mysql" href="sql.html">
-            <div class="card-top"><span class="subject-icon">🗄️</span><span class="arrow">↗</span></div>
-            <h3>SQL</h3><p>Queries, tables, joins, constraints and MySQL commands.</p>
+            <div class="card-top"><span class="subject-icon"><i class="devicon-azuresqldatabase-plain colored"></i></span><span class="arrow">↗</span></div>
+            <h3>SQL</h3>
+            <p>Queries, tables, joins, constraints and MySQL commands.</p>
             <span class="card-link">Read notes →</span>
           </a>
           <a class="subject-card searchable" data-name="mongodb mongo nosql database" href="mongodb.html">
-            <div class="card-top"><span class="subject-icon">🍃</span><span class="arrow">↗</span></div>
-            <h3>MongoDB</h3><p>Documents, collections, CRUD, queries and aggregation basics.</p>
+            <div class="card-top"><span class="subject-icon"><i class="devicon-mongodb-plain colored"></i></span><span class="arrow">↗</span></div>
+            <h3>MongoDB</h3>
+            <p>Documents, collections, CRUD, queries and aggregation basics.</p>
             <span class="card-link">Read notes →</span>
           </a>
           <a class="subject-card searchable" data-name="dsa data structures algorithms" href="dsa.html">
-            <div class="card-top"><span class="subject-icon">🧩</span><span class="arrow">↗</span></div>
-            <h3>DSA</h3><p>Arrays, searching, sorting, stacks, queues and complexity.</p>
+            <div class="card-top"><span class="subject-icon"><i class="fa-solid fa-cubes-stacked"></i></span><span class="arrow">↗</span></div>
+            <h3>DSA</h3>
+            <p>Arrays, searching, sorting, stacks, queues and complexity.</p>
             <span class="card-link">Read notes →</span>
           </a>
           <a class="subject-card searchable" data-name="javascript js programming" href="javascript.html">
-            <div class="card-top"><span class="subject-icon">⚡</span><span class="arrow">↗</span></div>
-            <h3>JavaScript</h3><p>Variables, functions, arrays, DOM, promises and async code.</p>
+            <div class="card-top"><span class="subject-icon"><i class="devicon-javascript-plain colored"></i></span><span class="arrow">↗</span></div>
+            <h3>JavaScript</h3>
+            <p>Variables, functions, arrays, DOM, promises and async code.</p>
             <span class="card-link">Read notes →</span>
           </a>
           <a class="subject-card searchable" data-name="java programming oop" href="java.html">
-            <div class="card-top"><span class="subject-icon">☕</span><span class="arrow">↗</span></div>
-            <h3>Java</h3><p>Core Java, OOP, collections, exceptions and common syntax.</p>
+            <div class="card-top"><span class="subject-icon"><i class="devicon-java-plain colored"></i></span><span class="arrow">↗</span></div>
+            <h3>Java</h3>
+            <p>Core Java, OOP, collections, exceptions and common syntax.</p>
             <span class="card-link">Read notes →</span>
           </a>
           <a class="subject-card searchable" data-name="react frontend javascript" href="react.html">
-            <div class="card-top"><span class="subject-icon">⚛️</span><span class="arrow">↗</span></div>
-            <h3>React</h3><p>Components, props, state, hooks and modern React basics.</p>
+            <div class="card-top"><span class="subject-icon"><i class="devicon-react-original colored"></i></span><span class="arrow">↗</span></div>
+            <h3>React</h3>
+            <p>Components, props, state, hooks and modern React basics.</p>
             <span class="card-link">Read notes →</span>
           </a>
           <a class="subject-card searchable" data-name="node nodejs express backend javascript" href="nodejs.html">
-            <div class="card-top"><span class="subject-icon">🟢</span><span class="arrow">↗</span></div>
-            <h3>Node.js</h3><p>Backend fundamentals, modules, HTTP, Express and APIs.</p>
+            <div class="card-top"><span class="subject-icon"><i class="devicon-nodejs-plain colored"></i></span><span class="arrow">↗</span></div>
+            <h3>Node.js</h3>
+            <p>Backend fundamentals, modules, HTTP, Express and APIs.</p>
             <span class="card-link">Read notes →</span>
           </a>
         </div>
@@ -113,4 +152,5 @@
   <footer class="footer">Short Notes • Built for learning and revision</footer>
   <script src="script.js"></script>
 </body>
+
 </html>

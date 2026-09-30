@@ -1,134 +1,2111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SQL short notes with examples and copy-ready code.">
-  <title>SQL | Short Notes</title>
+  <meta name="description"
+    content="Complete SQL notes from basic to advanced with easy explanations, examples and copy-ready code.">
+  <title>Code-Notes | SQL Complete Notes</title>
+
+  <!-- C  ommon CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Devicon -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+  <!-- Prism.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
 </head>
+
 <body>
+
+  <!-- Reading Progress -->
   <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <a class="logo" href="index.html"><span>&lt;/&gt;</span> Short Notes</a>
+    <a class="logo" href="index.html"><span><i class="fa-regular fa-note-sticky"></i></span>Coding-Notes</a>
     <div class="header-actions">
       <label class="search">
-        <span>⌕</span><input id="topicSearch" type="search" placeholder="Search on this page..." autocomplete="off">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="globalSearch" type="search" placeholder="Search subjects..." autocomplete="off">
       </label>
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme"></button>
       <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
       <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
     </div>
   </header>
 
+
+  <!-- ================= PAGE LAYOUT ================= -->
   <div class="page-shell">
+
+    <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-title">Subjects</div>
+
+      <div class="sidebar-title">
+        Subjects
+      </div>
+
       <nav>
-        <a href="sql.html">🗄️ SQL</a>
-        <a href="mongodb.html">🍃 MongoDB</a>
-        <a href="dsa.html">🧩 DSA</a>
-        <a href="javascript.html">⚡ JavaScript</a>
-        <a href="java.html">☕ Java</a>
-        <a href="react.html">⚛️ React</a>
-        <a href="nodejs.html">🟢 Node.js</a>
+
+        <div class="item">
+          <i class="devicon-azuresqldatabase-plain colored"></i>
+          <a href="sql.html">SQL</a>
+        </div>
+
+        <div class="item">
+          <i class="devicon-mongodb-plain colored"></i>
+          <a href="mongodb.html">MongoDB</a>
+        </div>
+
+        <div class="item">
+          <i class="fa-solid fa-cubes-stacked"></i>
+          <a href="dsa.html">DSA</a>
+        </div>
+
+        <div class="item">
+          <i class="devicon-javascript-plain colored"></i>
+          <a href="javascript.html">JavaScript</a>
+        </div>
+
+        <div class="item">
+          <i class="devicon-java-plain colored"></i>
+          <a href="java.html">Java</a>
+        </div>
+
+        <div class="item">
+          <i class="devicon-react-original colored"></i>
+          <a href="react.html">React</a>
+        </div>
+
+        <div class="item">
+          <i class="devicon-nodejs-plain colored"></i>
+          <a href="nodejs.html">Node.js</a>
+        </div>
+
       </nav>
-      <div class="sidebar-tip"><strong>Reading tip</strong><p>Use the sidebar to jump between topics.</p></div>
+
+      <div class="sidebar-tip">
+        <strong>SQL Tip</strong>
+        <p>
+          SQL practice karte time query ko khud type karke
+          run karna best way hai.
+        </p>
+      </div>
+
     </aside>
 
+
+    <!-- ================= MAIN ================= -->
     <main class="main note-main">
-      <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>SQL</span></div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>SQL</span>
+      </div>
+
+
+      <!-- Page Heading -->
       <section class="page-heading">
-        <span class="eyebrow">DATABASE</span>
-        <h1>SQL Short Notes</h1>
-        <p>Quick revision notes for relational databases, MySQL commands and everyday SQL queries.</p>
+
+        <span class="eyebrow">
+          DATABASE • BASIC → ADVANCED
+        </span>
+
+        <h1>
+          SQL Complete Notes
+        </h1>
+
+        <p>
+          SQL ko zero se advanced level tak simple language me samjho.
+          Is page me concepts, syntax, examples, practical queries,
+          interview points aur common mistakes included hain.
+        </p>
+
       </section>
+
+
+      <!-- ================= NOTES + TOC ================= -->
       <div class="note-layout">
+
         <article class="notes">
-<section class="topic searchable" id="introduction">
-  <h2>1. What is SQL?</h2>
-  <p>SQL (Structured Query Language) is used to create, read, update and delete data in relational databases such as MySQL.</p><div class="info-box"><strong>Remember:</strong> SQL works with structured data stored in tables.</div>
-</section>
-<section class="topic searchable" id="create">
-  <h2>2. Create Database</h2>
-  <p>Use <code>CREATE DATABASE</code> to create a new database and <code>USE</code> to select it.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">CREATE DATABASE college;
-USE college;</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="table">
-  <h2>3. Create Table</h2>
-  <p>A table stores data in rows and columns. Define a primary key when a column uniquely identifies each row.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">CREATE TABLE students (
+
+
+          <!-- =====================================================
+               1. INTRODUCTION
+          ====================================================== -->
+          <section class="topic searchable" id="introduction">
+
+            <h2>1. What is SQL?</h2>
+
+            <p>
+              <strong>SQL</strong> ka full form
+              <strong>Structured Query Language</strong> hai.
+              SQL ka use relational database me stored data ko
+              create, read, update aur delete karne ke liye hota hai.
+            </p>
+
+            <p>
+              Simple words me:
+              SQL ek language hai jiske through hum database ko
+              instructions dete hain.
+            </p>
+
+            <div class="info-box">
+              <strong>Example:</strong>
+              Agar college database me 10,000 students hain aur
+              hume sirf CSE students chahiye, to SQL query se hum
+              required data filter kar sakte hain.
+            </div>
+
+            <h3>SQL ka use kaha hota hai?</h3>
+
+            <ul>
+              <li>Web applications</li>
+              <li>Banking systems</li>
+              <li>College management systems</li>
+              <li>E-commerce websites</li>
+              <li>Employee management systems</li>
+              <li>Inventory management systems</li>
+              <li>Government and enterprise applications</li>
+            </ul>
+
+          </section>
+
+
+          <!-- =====================================================
+               2. DATABASE
+          ====================================================== -->
+          <section class="topic searchable" id="database">
+
+            <h2>2. What is a Database?</h2>
+
+            <p>
+              Database ek organized collection of data hota hai.
+              Data ko structured way me store kiya jata hai taaki
+              use easily search, update aur manage kiya ja sake.
+            </p>
+
+            <h3>Real-life example</h3>
+
+            <p>
+              College ke paas students ka data ho sakta hai:
+            </p>
+
+            <ul>
+              <li>Student ID</li>
+              <li>Name</li>
+              <li>Course</li>
+              <li>Age</li>
+              <li>Marks</li>
+            </ul>
+
+            <p>
+              Ye information database ke andar tables me store
+              ki ja sakti hai.
+            </p>
+
+          </section>
+
+
+          <!-- =====================================================
+               3. DBMS VS RDBMS
+          ====================================================== -->
+          <section class="topic searchable" id="dbms-rdbms">
+
+            <h2>3. DBMS vs RDBMS</h2>
+
+            <p>
+              <strong>DBMS</strong> database ko manage karne ka system hai.
+              <strong>RDBMS</strong> data ko related tables ke form me
+              organize karta hai.
+            </p>
+
+            <ul>
+              <li><strong>DBMS:</strong> basic database management.</li>
+              <li><strong>RDBMS:</strong> tables, relationships, keys and constraints.</li>
+              <li>MySQL, PostgreSQL, Oracle and SQL Server are popular RDBMS examples.</li>
+            </ul>
+
+            <div class="info-box">
+              <strong>Remember:</strong>
+              SQL language hai; MySQL ek RDBMS/software hai jo SQL
+              commands ko execute karta hai.
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               4. SQL COMMAND CATEGORIES
+          ====================================================== -->
+          <section class="topic searchable" id="command-types">
+
+            <h2>4. Types of SQL Commands</h2>
+
+            <p>
+              SQL commands ko commonly in categories me divide kiya jata hai:
+            </p>
+
+            <ul>
+              <li><strong>DDL:</strong> Data Definition Language</li>
+              <li><strong>DML:</strong> Data Manipulation Language</li>
+              <li><strong>DQL:</strong> Data Query Language</li>
+              <li><strong>DCL:</strong> Data Control Language</li>
+              <li><strong>TCL:</strong> Transaction Control Language</li>
+            </ul>
+
+            <h3>Important commands</h3>
+
+            <div class="info-box">
+              <strong>DDL:</strong> CREATE, ALTER, DROP, TRUNCATE<br>
+              <strong>DML:</strong> INSERT, UPDATE, DELETE<br>
+              <strong>DQL:</strong> SELECT<br>
+              <strong>DCL:</strong> GRANT, REVOKE<br>
+              <strong>TCL:</strong> COMMIT, ROLLBACK, SAVEPOINT
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               5. CREATE DATABASE
+          ====================================================== -->
+          <section class="topic searchable" id="create-database">
+
+            <h2>5. CREATE DATABASE</h2>
+
+            <p>
+              New database create karne ke liye
+              <code>CREATE DATABASE</code> command use hoti hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE DATABASE college;</code></pre>
+            </div>
+
+            <h3>Database select karna</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">USE college;</code></pre>
+            </div>
+
+            <h3>Existing databases dekhna</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SHOW DATABASES;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               6. DROP DATABASE
+          ====================================================== -->
+          <section class="topic searchable" id="drop-database">
+
+            <h2>6. DROP DATABASE</h2>
+
+            <p>
+              <code>DROP DATABASE</code> poori database ko delete
+              kar deta hai. Isliye production environment me
+              carefully use karna chahiye.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">DROP DATABASE college;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               7. TABLE
+          ====================================================== -->
+          <section class="topic searchable" id="create-table">
+
+            <h2>7. CREATE TABLE</h2>
+
+            <p>
+              Table database ke andar data ko rows aur columns
+              ke form me store karti hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE students (
   id INT PRIMARY KEY,
   name VARCHAR(50),
-  age INT
+  age INT,
+  course VARCHAR(50)
 );</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="select">
-  <h2>4. SELECT</h2>
-  <p><code>SELECT</code> retrieves data from a table. Use <code>WHERE</code> when you need filtering.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">SELECT name, age
+            </div>
+
+            <h3>Table dekhna</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SHOW TABLES;</code></pre>
+            </div>
+
+            <h3>Table structure dekhna</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">DESCRIBE students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               8. DATA TYPES
+          ====================================================== -->
+          <section class="topic searchable" id="data-types">
+
+            <h2>8. SQL Data Types</h2>
+
+            <p>
+              Data type define karta hai ki kisi column me kis type
+              ka data store hoga.
+            </p>
+
+            <ul>
+              <li><strong>INT:</strong> whole numbers</li>
+              <li><strong>DECIMAL:</strong> exact decimal values</li>
+              <li><strong>VARCHAR:</strong> variable-length text</li>
+              <li><strong>CHAR:</strong> fixed-length text</li>
+              <li><strong>DATE:</strong> date</li>
+              <li><strong>DATETIME:</strong> date + time</li>
+              <li><strong>BOOLEAN:</strong> true/false style values</li>
+              <li><strong>TEXT:</strong> larger text data</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE employees (
+  id INT,
+  name VARCHAR(100),
+  salary DECIMAL(10,2),
+  joining_date DATE,
+  active BOOLEAN
+);</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               9. INSERT
+          ====================================================== -->
+          <section class="topic searchable" id="insert">
+
+            <h2>9. INSERT INTO</h2>
+
+            <p>
+              Table me new record add karne ke liye
+              <code>INSERT INTO</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">INSERT INTO students (id, name, age, course)
+VALUES (1, 'Ankit', 21, 'CSE');</code></pre>
+            </div>
+
+            <h3>Multiple rows insert karna</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">INSERT INTO students (id, name, age, course)
+VALUES
+  (2, 'Rahul', 22, 'CSE'),
+  (3, 'Amit', 20, 'ECE'),
+  (4, 'Priya', 21, 'CSE');</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               10. SELECT
+          ====================================================== -->
+          <section class="topic searchable" id="select">
+
+            <h2>10. SELECT</h2>
+
+            <p>
+              Database se data read/retrieve karne ke liye
+              <code>SELECT</code> command use hoti hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT * FROM students;</code></pre>
+            </div>
+
+            <p>
+              Sirf required columns bhi select kar sakte hain.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT name, course
+FROM students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               11. WHERE
+          ====================================================== -->
+          <section class="topic searchable" id="where">
+
+            <h2>11. WHERE Clause</h2>
+
+            <p>
+              <code>WHERE</code> rows ko condition ke basis par filter karta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
 FROM students
-WHERE age >= 18;</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="insert">
-  <h2>5. INSERT</h2>
-  <p><code>INSERT INTO</code> adds new rows.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">INSERT INTO students (id, name, age)
-VALUES (1, 'Ankit', 21);</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="update">
-  <h2>6. UPDATE</h2>
-  <p>Use <code>UPDATE</code> to change existing rows. Always use a suitable <code>WHERE</code> condition.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">UPDATE students
+WHERE age >= 21;</code></pre>
+            </div>
+
+            <h3>Common comparison operators</h3>
+
+            <ul>
+              <li><code>=</code> equal</li>
+              <li><code>&gt;</code> greater than</li>
+              <li><code>&lt;</code> less than</li>
+              <li><code>&gt;=</code> greater than or equal</li>
+              <li><code>&lt;=</code> less than or equal</li>
+              <li><code>&lt;&gt;</code> / <code>!=</code> not equal</li>
+            </ul>
+
+          </section>
+
+
+          <!-- =====================================================
+               12. AND OR NOT
+          ====================================================== -->
+          <section class="topic searchable" id="logical-operators">
+
+            <h2>12. AND, OR and NOT</h2>
+
+            <p>
+              Multiple conditions combine karne ke liye logical operators
+              use hote hain.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+WHERE age >= 20
+  AND course = 'CSE';</code></pre>
+            </div>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+WHERE course = 'CSE'
+   OR course = 'ECE';</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               13. DISTINCT
+          ====================================================== -->
+          <section class="topic searchable" id="distinct">
+
+            <h2>13. DISTINCT</h2>
+
+            <p>
+              Duplicate values ko remove karke unique values dekhne ke
+              liye <code>DISTINCT</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT DISTINCT course
+FROM students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               14. ORDER BY
+          ====================================================== -->
+          <section class="topic searchable" id="order-by">
+
+            <h2>14. ORDER BY</h2>
+
+            <p>
+              Data ko ascending ya descending order me sort karne ke
+              liye <code>ORDER BY</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+ORDER BY age ASC;</code></pre>
+            </div>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+ORDER BY age DESC;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               15. LIMIT
+          ====================================================== -->
+          <section class="topic searchable" id="limit">
+
+            <h2>15. LIMIT</h2>
+
+            <p>
+              Result me limited number of rows chahiye to
+              <code>LIMIT</code> use karte hain.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+LIMIT 5;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               16. UPDATE
+          ====================================================== -->
+          <section class="topic searchable" id="update">
+
+            <h2>16. UPDATE</h2>
+
+            <p>
+              Existing record ko modify karne ke liye
+              <code>UPDATE</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">UPDATE students
 SET age = 22
 WHERE id = 1;</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="delete">
-  <h2>7. DELETE</h2>
-  <p><code>DELETE</code> removes rows. Without <code>WHERE</code>, all rows may be removed.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">DELETE FROM students
-WHERE id = 1;</code></pre>
-</div>
-</section>
-<section class="topic searchable" id="join">
-  <h2>8. JOIN</h2>
-  <p>JOIN combines related rows from multiple tables.</p><div class="code-card">
-  <div class="code-header"><span>SQL</span><button class="copy-btn" type="button">Copy</button></div>
-  <pre><code class="language-sql">SELECT students.name, courses.course_name
+            </div>
+
+            <div class="info-box">
+              <strong>Important:</strong>
+              UPDATE me WHERE lagana bahut important hai.
+              WHERE miss hone par multiple/all rows update ho sakti hain.
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               17. DELETE
+          ====================================================== -->
+          <section class="topic searchable" id="delete">
+
+            <h2>17. DELETE</h2>
+
+            <p>
+              Specific rows delete karne ke liye
+              <code>DELETE</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">DELETE FROM students
+WHERE id = 4;</code></pre>
+            </div>
+
+            <div class="info-box">
+              <strong>Warning:</strong>
+              DELETE without WHERE table ki sabhi rows delete kar sakta hai.
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               18. NULL
+          ====================================================== -->
+          <section class="topic searchable" id="null">
+
+            <h2>18. NULL</h2>
+
+            <p>
+              <code>NULL</code> ka matlab generally value missing/unknown hai.
+              NULL ko normal <code>=</code> comparison se check nahi karte.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
 FROM students
-INNER JOIN courses
-ON students.id = courses.student_id;</code></pre>
-</div>
-</section>
+WHERE course IS NULL;</code></pre>
+            </div>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+WHERE course IS NOT NULL;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               19. CONSTRAINTS
+          ====================================================== -->
+          <section class="topic searchable" id="constraints">
+
+            <h2>19. SQL Constraints</h2>
+
+            <p>
+              Constraints database me rules define karte hain,
+              jisse invalid data insert hone se roka ja sake.
+            </p>
+
+            <ul>
+              <li><strong>PRIMARY KEY:</strong> uniquely identifies a row.</li>
+              <li><strong>FOREIGN KEY:</strong> tables ke beech relationship.</li>
+              <li><strong>NOT NULL:</strong> value required.</li>
+              <li><strong>UNIQUE:</strong> duplicate values prevent karta hai.</li>
+              <li><strong>DEFAULT:</strong> default value set karta hai.</li>
+              <li><strong>CHECK:</strong> condition enforce karta hai.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE employees (
+  id INT PRIMARY KEY,
+  email VARCHAR(100) UNIQUE,
+  name VARCHAR(100) NOT NULL,
+  salary DECIMAL(10,2) CHECK (salary >= 0),
+  city VARCHAR(50) DEFAULT 'Delhi'
+);</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               20. PRIMARY KEY
+          ====================================================== -->
+          <section class="topic searchable" id="primary-key">
+
+            <h2>20. PRIMARY KEY</h2>
+
+            <p>
+              Primary key kisi table ke har row ko uniquely identify karta hai.
+              Isme duplicate value nahi honi chahiye aur primary key NULL nahi hoti.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50)
+);</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               21. FOREIGN KEY
+          ====================================================== -->
+          <section class="topic searchable" id="foreign-key">
+
+            <h2>21. FOREIGN KEY</h2>
+
+            <p>
+              Foreign key ek table ke column ko doosri table ke primary key
+              se connect karti hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE courses (
+  course_id INT PRIMARY KEY,
+  course_name VARCHAR(50)
+);
+
+CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  course_id INT,
+  FOREIGN KEY (course_id)
+    REFERENCES courses(course_id)
+);</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               22. ALTER
+          ====================================================== -->
+          <section class="topic searchable" id="alter">
+
+            <h2>22. ALTER TABLE</h2>
+
+            <p>
+              Existing table ki structure change karne ke liye
+              <code>ALTER TABLE</code> use hota hai.
+            </p>
+
+            <h3>Add column</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">ALTER TABLE students
+ADD email VARCHAR(100);</code></pre>
+            </div>
+
+            <h3>Drop column</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">ALTER TABLE students
+DROP COLUMN email;</code></pre>
+            </div>
+
+            <h3>Rename column</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">ALTER TABLE students
+RENAME COLUMN name TO full_name;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               23. DELETE vs TRUNCATE vs DROP
+          ====================================================== -->
+          <section class="topic searchable" id="delete-truncate-drop">
+
+            <h2>23. DELETE vs TRUNCATE vs DROP</h2>
+
+            <p>
+              Ye teen commands alag situations me use hoti hain.
+            </p>
+
+            <ul>
+              <li>
+                <strong>DELETE:</strong> rows remove karta hai;
+                WHERE ke saath selected rows delete kar sakte hain.
+              </li>
+              <li>
+                <strong>TRUNCATE:</strong> table ki all rows remove karta hai,
+                table structure rehti hai.
+              </li>
+              <li>
+                <strong>DROP:</strong> table/database ka structure bhi remove karta hai.
+              </li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">DELETE FROM students WHERE id = 2;
+
+TRUNCATE TABLE students;
+
+DROP TABLE students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               24. FUNCTIONS
+          ====================================================== -->
+          <section class="topic searchable" id="aggregate-functions">
+
+            <h2>24. SQL Aggregate Functions</h2>
+
+            <p>
+              Aggregate functions multiple rows ke data se ek result
+              calculate karti hain.
+            </p>
+
+            <ul>
+              <li><code>COUNT()</code> — number of rows</li>
+              <li><code>SUM()</code> — total</li>
+              <li><code>AVG()</code> — average</li>
+              <li><code>MIN()</code> — minimum</li>
+              <li><code>MAX()</code> — maximum</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  COUNT(*) AS total_students,
+  AVG(age) AS average_age,
+  MIN(age) AS youngest,
+  MAX(age) AS oldest
+FROM students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               25. GROUP BY
+          ====================================================== -->
+          <section class="topic searchable" id="group-by">
+
+            <h2>25. GROUP BY</h2>
+
+            <p>
+              Same values ko group karke aggregate calculation karne ke liye
+              <code>GROUP BY</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT course, COUNT(*) AS total
+FROM students
+GROUP BY course;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               26. HAVING
+          ====================================================== -->
+          <section class="topic searchable" id="having">
+
+            <h2>26. HAVING</h2>
+
+            <p>
+              <code>HAVING</code> grouped results ko filter karta hai.
+              Ye commonly <code>GROUP BY</code> ke saath use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT course, COUNT(*) AS total
+FROM students
+GROUP BY course
+HAVING COUNT(*) >= 2;</code></pre>
+            </div>
+
+            <div class="info-box">
+              <strong>Easy rule:</strong>
+              WHERE individual rows ko filter karta hai,
+              HAVING groups ko filter karta hai.
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               27. LIKE
+          ====================================================== -->
+          <section class="topic searchable" id="like">
+
+            <h2>27. LIKE Operator</h2>
+
+            <p>
+              Pattern matching ke liye <code>LIKE</code> use hota hai.
+            </p>
+
+            <ul>
+              <li><code>%</code> = zero or more characters</li>
+              <li><code>_</code> = exactly one character</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">-- Names starting with A
+SELECT *
+FROM students
+WHERE name LIKE 'A%';
+
+-- Names ending with n
+SELECT *
+FROM students
+WHERE name LIKE '%n';</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               28. IN BETWEEN
+          ====================================================== -->
+          <section class="topic searchable" id="in-between">
+
+            <h2>28. IN and BETWEEN</h2>
+
+            <p>
+              Multiple possible values check karne ke liye
+              <code>IN</code> aur range check karne ke liye
+              <code>BETWEEN</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT *
+FROM students
+WHERE course IN ('CSE', 'ECE');
+
+SELECT *
+FROM students
+WHERE age BETWEEN 20 AND 25;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               29. JOINS
+          ====================================================== -->
+          <section class="topic searchable" id="joins">
+
+            <h2>29. SQL JOINs</h2>
+
+            <p>
+              JOIN ka use related tables se data combine karne ke liye hota hai.
+            </p>
+
+            <h3>INNER JOIN</h3>
+
+            <p>
+              Sirf matching records return karta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT s.name, c.course_name
+FROM students s
+INNER JOIN courses c
+ON s.course_id = c.course_id;</code></pre>
+            </div>
+
+            <h3>LEFT JOIN</h3>
+
+            <p>
+              Left table ke all records aur matching right records return karta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT s.name, c.course_name
+FROM students s
+LEFT JOIN courses c
+ON s.course_id = c.course_id;</code></pre>
+            </div>
+
+            <h3>RIGHT JOIN</h3>
+
+            <p>
+              Right table ke all records aur matching left records return karta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT s.name, c.course_name
+FROM students s
+RIGHT JOIN courses c
+ON s.course_id = c.course_id;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               30. SELF JOIN
+          ====================================================== -->
+          <section class="topic searchable" id="self-join">
+
+            <h2>30. SELF JOIN</h2>
+
+            <p>
+              Jab table ko khud ke saath join karte hain, use SELF JOIN
+              kaha jata hai. Employee-manager relationships me useful hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  e.name AS employee,
+  m.name AS manager
+FROM employees e
+LEFT JOIN employees m
+ON e.manager_id = m.id;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               31. SUBQUERY
+          ====================================================== -->
+          <section class="topic searchable" id="subquery">
+
+            <h2>31. Subquery</h2>
+
+            <p>
+              Ek SQL query ke andar another SQL query ko
+              <strong>subquery</strong> kehte hain.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT name, salary
+FROM employees
+WHERE salary > (
+  SELECT AVG(salary)
+  FROM employees
+);</code></pre>
+            </div>
+
+            <p>
+              Is example me average salary se zyada salary wale employees
+              milenge.
+            </p>
+
+          </section>
+
+
+          <!-- =====================================================
+               32. CTE
+          ====================================================== -->
+          <section class="topic searchable" id="cte">
+
+            <h2>32. CTE — Common Table Expression</h2>
+
+            <p>
+              CTE complex query ko readable aur manageable banane ke liye
+              temporary named result set provide karta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">WITH high_salary AS (
+  SELECT *
+  FROM employees
+  WHERE salary > 50000
+)
+SELECT name, salary
+FROM high_salary;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               33. CASE
+          ====================================================== -->
+          <section class="topic searchable" id="case">
+
+            <h2>33. CASE Expression</h2>
+
+            <p>
+              SQL me conditional output generate karne ke liye
+              <code>CASE</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  name,
+  salary,
+  CASE
+    WHEN salary >= 80000 THEN 'High'
+    WHEN salary >= 50000 THEN 'Medium'
+    ELSE 'Low'
+  END AS salary_level
+FROM employees;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               34. STRING FUNCTIONS
+          ====================================================== -->
+          <section class="topic searchable" id="string-functions">
+
+            <h2>34. String Functions</h2>
+
+            <p>
+              Text data par operations perform karne ke liye string functions
+              use hoti hain.
+            </p>
+
+            <ul>
+              <li><code>UPPER()</code></li>
+              <li><code>LOWER()</code></li>
+              <li><code>CONCAT()</code></li>
+              <li><code>LENGTH()</code></li>
+              <li><code>TRIM()</code></li>
+              <li><code>SUBSTRING()</code></li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  UPPER(name) AS upper_name,
+  LOWER(name) AS lower_name,
+  LENGTH(name) AS name_length
+FROM students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               35. DATE FUNCTIONS
+          ====================================================== -->
+          <section class="topic searchable" id="date-functions">
+
+            <h2>35. Date and Time Functions</h2>
+
+            <p>
+              MySQL me date/time ke liye built-in functions available hain.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT CURDATE();
+
+SELECT NOW();
+
+SELECT YEAR(joining_date)
+FROM employees;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               36. VIEWS
+          ====================================================== -->
+          <section class="topic searchable" id="views">
+
+            <h2>36. VIEW</h2>
+
+            <p>
+              View ek virtual table hoti hai jo ek SQL query ke result par
+              based hoti hai. Isme generally original data ki separate copy
+              store nahi hoti.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE VIEW cse_students AS
+SELECT id, name, age
+FROM students
+WHERE course = 'CSE';
+
+SELECT *
+FROM cse_students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               37. INDEX
+          ====================================================== -->
+          <section class="topic searchable" id="indexes">
+
+            <h2>37. INDEX</h2>
+
+            <p>
+              Index database ko particular columns par records faster
+              find karne me help karta hai. Lekin unnecessary indexes
+              writes ko slower aur storage usage ko higher kar sakte hain.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE INDEX idx_student_name
+ON students(name);</code></pre>
+            </div>
+
+            <h3>Index check karna</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SHOW INDEX FROM students;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               38. NORMALIZATION
+          ====================================================== -->
+          <section class="topic searchable" id="normalization">
+
+            <h2>38. Normalization</h2>
+
+            <p>
+              Normalization database design technique hai jiska goal
+              unnecessary data duplication aur update anomalies ko reduce karna hai.
+            </p>
+
+            <h3>1NF</h3>
+            <p>
+              Har field me atomic/single value honi chahiye.
+            </p>
+
+            <h3>2NF</h3>
+            <p>
+              Table 1NF me ho aur non-key attributes complete primary key
+              par depend karein.
+            </p>
+
+            <h3>3NF</h3>
+            <p>
+              Table 2NF me ho aur non-key attributes kisi other non-key
+              attribute par depend na karein.
+            </p>
+
+            <div class="info-box">
+              <strong>Simple idea:</strong>
+              Data ko logically separate tables me organize karo taaki
+              repeated information kam ho aur consistency improve ho.
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               39. TRANSACTION
+          ====================================================== -->
+          <section class="topic searchable" id="transactions">
+
+            <h2>39. Transactions</h2>
+
+            <p>
+              Transaction SQL operations ka logical group hota hai.
+              Banking transfer iska common example hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">START TRANSACTION;
+
+UPDATE accounts
+SET balance = balance - 1000
+WHERE id = 1;
+
+UPDATE accounts
+SET balance = balance + 1000
+WHERE id = 2;
+
+COMMIT;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               40. COMMIT ROLLBACK
+          ====================================================== -->
+          <section class="topic searchable" id="commit-rollback">
+
+            <h2>40. COMMIT and ROLLBACK</h2>
+
+            <p>
+              <code>COMMIT</code> transaction ke changes ko permanently
+              save karta hai. <code>ROLLBACK</code> transaction ke
+              uncommitted changes ko undo kar sakta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">START TRANSACTION;
+
+UPDATE students
+SET age = 25
+WHERE id = 1;
+
+ROLLBACK;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               41. SAVEPOINT
+          ====================================================== -->
+          <section class="topic searchable" id="savepoint">
+
+            <h2>41. SAVEPOINT</h2>
+
+            <p>
+              Transaction ke beech ek checkpoint banane ke liye
+              <code>SAVEPOINT</code> use hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">START TRANSACTION;
+
+UPDATE students
+SET age = 22
+WHERE id = 1;
+
+SAVEPOINT point1;
+
+UPDATE students
+SET age = 23
+WHERE id = 2;
+
+ROLLBACK TO point1;
+
+COMMIT;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               42. ACID
+          ====================================================== -->
+          <section class="topic searchable" id="acid">
+
+            <h2>42. ACID Properties</h2>
+
+            <p>
+              Reliable database transactions ke four important properties
+              ko ACID kehte hain.
+            </p>
+
+            <ul>
+              <li>
+                <strong>Atomicity:</strong>
+                transaction all-or-nothing principle follow karta hai.
+              </li>
+              <li>
+                <strong>Consistency:</strong>
+                transaction database ko valid state me rakhta hai.
+              </li>
+              <li>
+                <strong>Isolation:</strong>
+                concurrent transactions ek doosre ke intermediate state
+                ko improperly affect na karein.
+              </li>
+              <li>
+                <strong>Durability:</strong>
+                committed changes failure ke baad bhi persist karne ke liye
+                database mechanisms use karta hai.
+              </li>
+            </ul>
+
+          </section>
+
+
+          <!-- =====================================================
+               43. STORED PROCEDURE
+          ====================================================== -->
+          <section class="topic searchable" id="stored-procedure">
+
+            <h2>43. Stored Procedure</h2>
+
+            <p>
+              Stored procedure database server par stored SQL statements
+              ka reusable program-like block hota hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL / MySQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">DELIMITER //
+
+CREATE PROCEDURE GetStudents()
+BEGIN
+  SELECT *
+  FROM students;
+END //
+
+DELIMITER ;
+
+CALL GetStudents();</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               44. TRIGGER
+          ====================================================== -->
+          <section class="topic searchable" id="trigger">
+
+            <h2>44. Trigger</h2>
+
+            <p>
+              Trigger automatically execute hone wala database object hai
+              jo INSERT, UPDATE ya DELETE jaise events ke response me run ho sakta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL / MySQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TRIGGER before_student_insert
+BEFORE INSERT ON students
+FOR EACH ROW
+SET NEW.name = TRIM(NEW.name);</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               45. UNION
+          ====================================================== -->
+          <section class="topic searchable" id="union">
+
+            <h2>45. UNION and UNION ALL</h2>
+
+            <p>
+              Multiple SELECT queries ke result ko combine karne ke liye
+              <code>UNION</code> use hota hai.
+            </p>
+
+            <ul>
+              <li><strong>UNION:</strong> duplicate rows remove karta hai.</li>
+              <li><strong>UNION ALL:</strong> duplicates ko preserve karta hai.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT name FROM students
+UNION
+SELECT name FROM employees;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               46. WINDOW FUNCTIONS
+          ====================================================== -->
+          <section class="topic searchable" id="window-functions">
+
+            <h2>46. Window Functions</h2>
+
+            <p>
+              Window functions related rows ke group par calculation
+              karti hain bina rows ko ek single row me collapse kiye.
+            </p>
+
+            <h3>ROW_NUMBER()</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  name,
+  salary,
+  ROW_NUMBER() OVER (
+    ORDER BY salary DESC
+  ) AS salary_rank
+FROM employees;</code></pre>
+            </div>
+
+            <h3>PARTITION BY</h3>
+
+            <p>
+              Partition data ko logical groups me divide karta hai.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  name,
+  department,
+  salary,
+  RANK() OVER (
+    PARTITION BY department
+    ORDER BY salary DESC
+  ) AS dept_rank
+FROM employees;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               47. EXISTS
+          ====================================================== -->
+          <section class="topic searchable" id="exists">
+
+            <h2>47. EXISTS</h2>
+
+            <p>
+              <code>EXISTS</code> check karta hai ki subquery kam se kam
+              ek matching row return karti hai ya nahi.
+            </p>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT s.name
+FROM students s
+WHERE EXISTS (
+  SELECT 1
+  FROM courses c
+  WHERE c.course_id = s.course_id
+);</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               48. QUERY EXECUTION ORDER
+          ====================================================== -->
+          <section class="topic searchable" id="execution-order">
+
+            <h2>48. SQL Query Execution Order</h2>
+
+            <p>
+              Query likhne ka order aur database ke logical processing order
+              me difference ho sakta hai.
+            </p>
+
+            <div class="info-box">
+              <strong>Common logical order:</strong><br>
+              FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT
+            </div>
+
+            <p>
+              Ye concept complex queries aur interview questions samajhne me
+              bahut useful hai.
+            </p>
+
+          </section>
+
+
+          <!-- =====================================================
+               49. PERFORMANCE
+          ====================================================== -->
+          <section class="topic searchable" id="performance">
+
+            <h2>49. SQL Performance Basics</h2>
+
+            <p>
+              Large database me query performance important hoti hai.
+            </p>
+
+            <ul>
+              <li>Only required columns select karo instead of unnecessary <code>*</code>.</li>
+              <li>Frequently searched columns par suitable indexes consider karo.</li>
+              <li>Joins ke columns ko carefully index karo.</li>
+              <li>Large datasets par pagination use karo.</li>
+              <li>Query execution plan samajhne ke liye <code>EXPLAIN</code> use karo.</li>
+            </ul>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL / MySQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">EXPLAIN
+SELECT *
+FROM students
+WHERE course = 'CSE';</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               50. PRACTICAL PROJECT
+          ====================================================== -->
+          <section class="topic searchable" id="mini-project">
+
+            <h2>50. Mini Practical Example — Student Database</h2>
+
+            <p>
+              Ab basic se advanced concepts ko ek small practical example
+              me connect karte hain.
+            </p>
+
+            <h3>Step 1 — Database</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE DATABASE college;
+USE college;</code></pre>
+            </div>
+
+            <h3>Step 2 — Courses table</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE courses (
+  course_id INT PRIMARY KEY,
+  course_name VARCHAR(50) NOT NULL
+);</code></pre>
+            </div>
+
+            <h3>Step 3 — Students table</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  age INT,
+  course_id INT,
+  FOREIGN KEY (course_id)
+    REFERENCES courses(course_id)
+);</code></pre>
+            </div>
+
+            <h3>Step 4 — Insert data</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">INSERT INTO courses
+(course_id, course_name)
+VALUES
+(1, 'CSE'),
+(2, 'ECE');
+
+INSERT INTO students
+(id, name, age, course_id)
+VALUES
+(101, 'Ankit', 21, 1),
+(102, 'Rahul', 22, 1),
+(103, 'Amit', 20, 2);</code></pre>
+            </div>
+
+            <h3>Step 5 — Join and display</h3>
+
+            <div class="code-card">
+              <div class="code-header">
+                <span>SQL</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+
+              <pre><code class="language-sql">SELECT
+  s.id,
+  s.name,
+  s.age,
+  c.course_name
+FROM students s
+JOIN courses c
+ON s.course_id = c.course_id
+ORDER BY s.name;</code></pre>
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               51. INTERVIEW QUESTIONS
+          ====================================================== -->
+          <section class="topic searchable" id="interview">
+
+            <h2>51. Important SQL Interview Questions</h2>
+
+            <ol>
+              <li>What is SQL and how is it different from MySQL?</li>
+              <li>What is the difference between DBMS and RDBMS?</li>
+              <li>What is a primary key?</li>
+              <li>What is a foreign key?</li>
+              <li>What is normalization?</li>
+              <li>Difference between DELETE, TRUNCATE and DROP?</li>
+              <li>Difference between WHERE and HAVING?</li>
+              <li>Difference between INNER JOIN and LEFT JOIN?</li>
+              <li>What is an index?</li>
+              <li>What are ACID properties?</li>
+              <li>What is a transaction?</li>
+              <li>What is a subquery?</li>
+              <li>What is a CTE?</li>
+              <li>What are window functions?</li>
+              <li>What is the difference between UNION and UNION ALL?</li>
+            </ol>
+
+          </section>
+
+
+          <!-- =====================================================
+               52. PRACTICE QUESTIONS
+          ====================================================== -->
+          <section class="topic searchable" id="practice">
+
+            <h2>52. Practice Questions</h2>
+
+            <p>
+              In questions ko khud SQL me solve karne ki practice karo.
+            </p>
+
+            <ol>
+              <li>Students table se sirf CSE students find karo.</li>
+              <li>Age 20 se greater students find karo.</li>
+              <li>Students ko age descending order me display karo.</li>
+              <li>Har course me total students count karo.</li>
+              <li>Average age calculate karo.</li>
+              <li>Duplicate courses ko remove karke display karo.</li>
+              <li>Students aur courses ko JOIN karo.</li>
+              <li>Average salary se greater salary wale employees find karo.</li>
+              <li>Department-wise highest salary find karo.</li>
+              <li>Top 5 highest-paid employees find karo.</li>
+            </ol>
+
+          </section>
+
+
+          <!-- =====================================================
+               53. QUICK REVISION
+          ====================================================== -->
+          <section class="topic searchable" id="quick-revision">
+
+            <h2>53. Quick Revision Cheat Sheet</h2>
+
+            <div class="info-box">
+              <strong>Database:</strong> CREATE DATABASE / USE / SHOW DATABASES<br><br>
+
+              <strong>Table:</strong> CREATE TABLE / ALTER TABLE / DROP TABLE<br><br>
+
+              <strong>Data:</strong> INSERT / SELECT / UPDATE / DELETE<br><br>
+
+              <strong>Filter:</strong> WHERE / IN / BETWEEN / LIKE / IS NULL<br><br>
+
+              <strong>Sort:</strong> ORDER BY / LIMIT<br><br>
+
+              <strong>Group:</strong> GROUP BY / HAVING<br><br>
+
+              <strong>Combine:</strong> JOIN / UNION / SUBQUERY / CTE<br><br>
+
+              <strong>Functions:</strong> COUNT / SUM / AVG / MIN / MAX<br><br>
+
+              <strong>Transactions:</strong> START TRANSACTION / COMMIT / ROLLBACK / SAVEPOINT<br><br>
+
+              <strong>Advanced:</strong> VIEW / INDEX / PROCEDURE / TRIGGER / WINDOW FUNCTIONS
+            </div>
+
+          </section>
+
 
         </article>
+
+
+        <!-- ================= TABLE OF CONTENTS ================= -->
         <aside class="toc" id="toc">
-          <div class="toc-title">On this page</div>
+
+          <div class="toc-title">
+            On this page
+          </div>
+
           <div id="tocLinks"></div>
+
         </aside>
+
       </div>
+
+
+      <!-- ================= PAGE NAVIGATION ================= -->
       <div class="page-nav">
-        <a class="secondary-btn" href="index.html">← Previous</a>
-        <a class="primary-btn" href="mongodb.html">Next →</a>
+
+        <a class="secondary-btn" href="index.html">
+          ← Home
+        </a>
+
+        <a class="primary-btn" href="mongodb.html">
+          MongoDB →
+        </a>
+
       </div>
+
     </main>
+
   </div>
-  <footer class="footer">Short Notes • Keep learning, keep building.</footer>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    Code-Notes • SQL Complete Notes • Basic → Advanced
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+
   <script src="script.js"></script>
+
 </body>
+
 </html>

@@ -13,7 +13,9 @@ root.setAttribute("data-theme", startTheme);
 function updateThemeIcon() {
   if (!themeBtn) return;
   const dark = root.getAttribute("data-theme") === "dark";
-  themeBtn.textContent = dark ? "☀️" : "🌙";
+  themeBtn.innerHTML = dark 
+  ? '<i class="fa-regular fa-sun"></i>' 
+  : '<i class="fa-regular fa-moon"></i>';
   themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
 }
 updateThemeIcon();
