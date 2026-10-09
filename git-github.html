@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Detailed Git and GitHub notes from beginner to advanced with examples and commands.">
+<title>Code-Notes | Git &amp; GitHub Complete Notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<header class="header">
+    <a class="logo" href="index.html"><span><i class="fa-regular fa-note-sticky "></i></span>Coding-Notes</a>
+<div class="header-actions">
+<label class="search"><span>⌕</span><input id="topicSearch" type="search" placeholder="Search Git notes..." autocomplete="off"></label>
+<button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+<a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+<button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+</div>
+</header>
+<div class="page-shell">
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-title">Subjects</div>
+<nav>
+<div class="item"><i class="devicon-azuresqldatabase-plain colored"></i><a href="sql.html">SQL</a></div>
+<div class="item"><i class="devicon-mongodb-plain colored"></i><a href="mongodb.html">MongoDB</a></div>
+<div class="item"><i class="fa-solid fa-cubes-stacked"></i><a href="dsa.html">DSA</a></div>
+<div class="item"><i class="devicon-javascript-plain colored"></i><a href="javascript.html">JavaScript</a></div>
+<div class="item"><i class="devicon-java-plain colored"></i><a href="java.html">Java</a></div>
+<div class="item"><i class="devicon-react-original colored"></i><a href="react.html">React</a></div>
+<div class="item"><i class="devicon-nodejs-plain colored"></i><a href="nodejs.html">Node.js</a></div>
+<div class="item"><i class="devicon-git-plain colored"></i><a href="git-github.html">Git &amp; GitHub</a></div>
+</nav>
+<div class="sidebar-tip"><strong>Git tip</strong><p>Before committing, check <code>git status</code> and review your diff.</p></div>
+</aside>
+<main class="main note-main">
+<div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>Git &amp; GitHub</span></div>
+<section class="page-heading">
+<span class="eyebrow">DEVELOPER TOOLS • BEGINNER → ADVANCED</span>
+<h1>Git &amp; GitHub Complete Notes</h1>
+<p>Easy Hinglish explanations, terminal commands, examples, collaboration workflow, common errors, interview questions and practice tasks.</p>
+</section>
+<div class="note-layout">
+<article class="notes">
+<section class="topic searchable" id="intro"><h2>1. Git aur GitHub kya hain?</h2><p><strong>Git</strong> ek version control system hai jo project ki history, file changes aur commits track karta hai. <strong>GitHub</strong> ek online platform hai jahan Git repositories host aur teams collaborate kar sakti hain.</p><div class="info-box"><strong>Yaad rakhein:</strong> Git aapke computer par bhi kaam karta hai. GitHub online hosting, Pull Requests, Issues aur code review deta hai.</div><ul><li>Git = version history tool</li><li>GitHub = hosting and collaboration platform</li><li>Git use karne ke liye GitHub account compulsory nahi hai.</li></ul></section>
+<section class="topic searchable" id="install"><h2>2. Install and verify Git</h2><p>Windows par Git install karke Git Bash ya terminal open karein. Installation verify karne ke liye:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git --version</code></pre></div><p>Version print hota hai to Git command available hai. Command not found aaye to installation/PATH check karein.</p></section>
+<section class="topic searchable" id="config"><h2>3. First-time configuration</h2><p>Git commits me author name aur email store karta hai. Apni details set karein:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global --list</code></pre></div><p><code>--global</code> sabhi repositories ke liye hai. Ek repo ke liye us folder me <code>--local</code> use karein.</p></section>
+<section class="topic searchable" id="workflow"><h2>4. Git workflow</h2><div class="info-box"><strong>Working Directory → Staging Area → Local Repository → Remote Repository</strong></div><ul><li><strong>Working directory:</strong> jahan files edit karte hain.</li><li><strong>Staging area:</strong> next commit ke liye selected changes.</li><li><strong>Local repository:</strong> computer par saved commit history.</li><li><strong>Remote:</strong> GitHub jaise server par repository.</li></ul></section>
+<section class="topic searchable" id="init"><h2>5. Initialize a repository</h2><p>Naye project folder me Git start karne ke liye:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">mkdir my-project
+cd my-project
+git init
+git status</code></pre></div><p><code>git init</code> repository initialize karta hai aur <code>git status</code> current changes ka status batata hai.</p></section>
+<section class="topic searchable" id="clone"><h2>6. Clone a GitHub repository</h2><p>Existing GitHub project ko computer par copy karne ke liye repository page se URL copy karein:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git clone https://github.com/USERNAME/REPOSITORY.git
+cd REPOSITORY</code></pre></div><p><code>USERNAME</code> aur <code>REPOSITORY</code> ko actual values se replace karein.</p></section>
+<section class="topic searchable" id="add-commit"><h2>7. Add and commit</h2><p><code>git add</code> changes stage karta hai; <code>git commit</code> staged snapshot history me save karta hai.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git status
+git add index.html
+git diff --staged
+git commit -m "Add homepage"</code></pre></div><div class="info-box"><strong>Tip:</strong> Commit se pehle <code>git status</code> aur <code>git diff --staged</code> check karein.</div></section>
+<section class="topic searchable" id="history"><h2>8. History and differences</h2><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git log
+git log --oneline --graph --all
+git show
+git diff
+git diff --staged</code></pre></div><ul><li><code>git log</code>: commit history.</li><li><code>git show</code>: ek commit ka detail.</li><li><code>git diff</code>: unstaged changes.</li><li><code>git diff --staged</code>: staged changes.</li></ul></section>
+<section class="topic searchable" id="ignore"><h2>9. .gitignore</h2><p><code>.gitignore</code> me patterns likh kar un files ko untracked rehne de sakte hain jinhe Git normally track na kare.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash"># Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local secrets
+.env
+
+# Logs
+*.log</code></pre></div><p>Important: .gitignore pehle se tracked file ko automatically untrack nahi karta. API keys/passwords commit na karein; leaked secret ko revoke/rotate karein.</p></section>
+<section class="topic searchable" id="branch"><h2>10. Branches</h2><p>Branch ek separate line of work hai, jaise feature ya bug fix par main branch ko disturb kiye bina kaam karna.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git branch
+git switch -c feature/navbar
+git switch main
+# Older alternative:
+git checkout -b feature/navbar</code></pre></div><p>Modern Git me branch switch/create ke liye <code>git switch</code> readable option hai.</p></section>
+<section class="topic searchable" id="merge"><h2>11. Merge and conflicts</h2><p>Feature branch ko target branch me merge karne ka example:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git switch main
+git pull
+git merge feature/navbar</code></pre></div><p>Merge conflict tab aata hai jab Git overlapping edits ko automatically combine nahi kar pata. Conflicted file edit karein, conflict markers remove karein, test karein aur phir:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git status
+git add path/to/file
+git commit</code></pre></div></section>
+<section class="topic searchable" id="remote"><h2>12. Remote, origin and upstream</h2><p>Remote ek named URL hai. <code>origin</code> clone karte waqt usually default remote name hota hai.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git remote -v
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git remote set-url origin https://github.com/USERNAME/NEW-REPOSITORY.git</code></pre></div><p><code>upstream</code> aksar fork ki original repository ke liye remote name hota hai; ye naming convention hai, special keyword nahi.</p></section>
+<section class="topic searchable" id="sync"><h2>13. Fetch, pull and push</h2><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git fetch origin
+git pull origin main
+git push -u origin main
+git push</code></pre></div><ul><li><code>fetch</code> remote updates download karta hai, par current branch ko automatically integrate nahi karta.</li><li><code>pull</code> fetch karke configured strategy se integrate karta hai.</li><li><code>push</code> commits remote par upload karta hai.</li><li><code>-u</code> upstream tracking set karta hai.</li></ul></section>
+<section class="topic searchable" id="github"><h2>14. Push a local project to GitHub</h2><ol><li>GitHub par New repository banayein.</li><li>Local project folder me terminal open karein.</li><li>Files commit karein, phir remote add karke push karein.</li></ol><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git push -u origin main</code></pre></div><p>Agar remote repository me pehle se README/commits hain, histories different ho sakti hain. Push se pehle remote changes safely integrate karein; bina samjhe force push na karein.</p></section>
+<section class="topic searchable" id="pr"><h2>15. Pull Requests and collaboration</h2><p>Pull Request (PR) proposed changes ko discuss, review aur merge karne ka GitHub workflow hai.</p><ol><li>Feature branch banayein.</li><li>Changes aur tests complete karein.</li><li>Commit aur branch push karein.</li><li>GitHub par PR open karein.</li><li>Review feedback address karein.</li><li>Checks pass hone ke baad authorized maintainer merge kare.</li></ol><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git switch -c feature/search
+# edit files
+git add .
+git commit -m "Add search feature"
+git push -u origin feature/search</code></pre></div></section>
+<section class="topic searchable" id="fork"><h2>16. Fork vs clone</h2><p><strong>Fork</strong> GitHub par kisi repository ki aapke account me server-side copy hoti hai. <strong>Clone</strong> repository ko local computer par download karta hai.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git clone https://github.com/YOUR-USERNAME/PROJECT.git
+cd PROJECT
+git remote add upstream https://github.com/ORIGINAL-OWNER/PROJECT.git
+git remote -v</code></pre></div><p>Open-source contribution me common flow: fork → clone → branch → commit → push → Pull Request.</p></section>
+<section class="topic searchable" id="undo"><h2>17. Undo changes safely</h2><p>Undo commands ko samajh kar use karein, kyunki kuch commands local work discard kar sakti hain.</p><p><strong>Unstaged edits discard:</strong></p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git restore filename.html</code></pre></div><p><strong>Staging se remove, changes preserve:</strong></p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git restore --staged filename.html</code></pre></div><p><strong>Commit ko new reversing commit se undo:</strong></p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git revert COMMIT_HASH</code></pre></div><p><strong>Recent local commit undo, changes staged rakhein:</strong></p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git reset --soft HEAD~1</code></pre></div><div class="info-box"><strong>Caution:</strong> <code>git reset --hard</code> uncommitted changes delete kar sakta hai. Shared history rewrite karne se pehle team se coordinate karein.</div></section>
+<section class="topic searchable" id="stash-rebase"><h2>18. Stash and rebase</h2><p><strong>Stash</strong> uncommitted changes ko temporarily side par rakhta hai:</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git stash
+git stash list
+git stash pop
+git stash apply</code></pre></div><p><strong>Rebase</strong> commits ko kisi naye base ke upar replay karta hai; history linear ho sakti hai, lekin commit hashes change ho sakte hain.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git fetch origin
+git switch feature/search
+git rebase origin/main
+# After resolving conflicts:
+git rebase --continue
+# Cancel rebase:
+git rebase --abort</code></pre></div><p>Public/shared commits ko rebase karne me caution rakhein.</p></section>
+<section class="topic searchable" id="auth"><h2>19. HTTPS, SSH and security</h2><p>GitHub remote authentication HTTPS ya SSH se ho sakti hai. HTTPS credential manager/browser sign-in use kar sakta hai; SSH me public key GitHub account me add karte hain.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git remote -v
+# HTTPS example
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+# SSH example
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git</code></pre></div><div class="info-box"><strong>Security:</strong> Password, access token aur private SSH key kisi se share na karein. Inhe code/repository me commit na karein.</div></section>
+<section class="topic searchable" id="github-features"><h2>20. GitHub features</h2><ul><li><strong>README.md:</strong> project intro, setup aur usage instructions.</li><li><strong>Issues:</strong> bugs, tasks aur ideas track karna.</li><li><strong>Pull Requests:</strong> changes review and merge karna.</li><li><strong>Actions:</strong> CI/CD workflows automate karna.</li><li><strong>Releases:</strong> versioned software releases publish karna.</li><li><strong>Projects:</strong> work planning and tracking.</li><li><strong>Pages:</strong> static HTML/CSS/JS website hosting.</li></ul></section>
+<section class="topic searchable" id="pages"><h2>21. GitHub Pages</h2><p>GitHub Pages static websites (HTML, CSS, JavaScript) host kar sakta hai. Portfolio ya Code-Notes site ke liye useful hai.</p><ol><li>Website files repository me push karein.</li><li>Repository Settings → Pages open karein.</li><li>Publishing branch/folder select karein, jaise <code>main</code> aur <code>/(root)</code> (project structure ke hisaab se).</li><li>Save karke deployment URL check karein.</li></ol><div class="info-box">GitHub Pages static hosting hai; server-side Node.js process ya database server directly run nahi hota.</div></section>
+<section class="topic searchable" id="errors"><h2>22. Common errors and fixes</h2><h3>Not a git repository</h3><p>Correct folder me jaayein ya repository initialize karein.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">cd path/to/project
+git status</code></pre></div><h3>Nothing to commit</h3><p>Changes nahi hain ya stage nahi hue. Status check karein.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git status
+git add filename
+git commit -m "Describe change"</code></pre></div><h3>Non-fast-forward / rejected push</h3><p>Remote par new commits ho sakte hain. Pehle fetch/pull karein; uncommitted changes hon to rebase se pehle commit ya stash karein.</p><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash">git fetch origin
+git pull --rebase origin main</code></pre></div><p>Conflict aaye to resolve karke rebase continue karein.</p></section>
+<section class="topic searchable" id="best-practices"><h2>23. Best practices</h2><ul><li>Small, focused commits banayein.</li><li>Clear messages likhein, jaise <code>Add SQL notes page</code>.</li><li>Commit se pehle status aur diff review karein.</li><li>Feature ke liye separate branch use karein.</li><li>Secrets ko repository me kabhi commit na karein.</li><li>Destructive commands samjhe bina run na karein.</li><li>README me installation, usage aur contribution steps likhein.</li></ul></section>
+<section class="topic searchable" id="cheatsheet"><h2>24. Git command cheat sheet</h2><div class="code-card"><div class="code-header"><span>Bash / Git</span><button class="copy-btn" type="button">Copy</button></div><pre><code class="language-bash"># Inspect
+git status
+git log --oneline
+git diff
+
+# Stage and commit
+git add .
+git commit -m "Meaningful message"
+
+# Branches
+git switch -c feature/name
+git switch main
+git merge feature/name
+
+# Remote collaboration
+git remote -v
+git fetch origin
+git pull
+git push
+
+# Undo / stash
+git restore filename
+git restore --staged filename
+git revert COMMIT_HASH
+git stash
+git stash pop</code></pre></div></section>
+<section class="topic searchable" id="practice"><h2>25. Practice tasks</h2><ol><li><code>git-practice</code> folder banayein aur Git initialize karein.</li><li><code>index.html</code> create karke first commit banayein.</li><li>File change karke <code>git diff</code> dekhein.</li><li>Feature branch banakar new file add karein.</li><li>Feature branch main me merge karein.</li><li>Local project ko GitHub repository par push karein.</li><li>README me project details likhein.</li><li>Pull Request workflow practice karein.</li><li>Static page GitHub Pages par publish karein.</li></ol></section>
+<section class="topic searchable" id="interview"><h2>26. Interview questions</h2><ol><li>Git aur GitHub me kya difference hai?</li><li>Repository, commit aur staging area kya hain?</li><li><code>git fetch</code> vs <code>git pull</code>?</li><li><code>git merge</code> vs <code>git rebase</code>?</li><li>Merge conflict kaise solve karte hain?</li><li><code>git revert</code> vs <code>git reset</code>?</li><li>Fork vs clone?</li><li><code>.gitignore</code> ka purpose?</li><li>Pull Request kya hai?</li><li>GitHub Pages kya host kar sakta hai?</li></ol></section>
+</article>
+<aside class="toc" id="toc"><div class="toc-title">On this page</div><div id="tocLinks"></div></aside>
+</div>
+<div class="page-nav"><a class="secondary-btn" href="index.html">← Home</a><a class="primary-btn" href="sql.html">SQL Notes →</a></div>
+</main>
+</div>
+<footer class="footer">Code-Notes • Git &amp; GitHub • Learn, commit, collaborate.</footer>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
